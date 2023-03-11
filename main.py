@@ -2,16 +2,12 @@ from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 import os, json, string
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import time
-from database import Database
-from config import API_TOKEN, ADMIN_ID1, ADMIN_ID2
+from config import API_TOKEN
 
 #ТОКЕН БОТА
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
-
-database = Database("database.db")
 
 
 version = "1.0" ##НАПИШИ ВЕРСИЮ Пример : "1.0"
