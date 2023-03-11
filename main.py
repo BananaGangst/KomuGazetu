@@ -30,16 +30,16 @@ async def get_id(message: types.Message):
 @dp.message_handler()
 async def echo_send(message : types.Message):
 	if "https" in message.text:
-		await message.reply(f"🤬 Ссылки запрещены 🤬 \n@{message.from_user.username}")
+		await message.reply(f"🌏 Ссылки запрещены 🌏\n@{message.from_user.username}")
 		await message.delete()
 	elif "http" in message.text:
-		await message.reply(f"🤬 Ссылки запрещены 🤬 \n@{message.from_user.username}")
+		await message.reply(f"🌏 Ссылки запрещены 🌏\n@{message.from_user.username}")
 		await message.delete()
 	elif "t.me" in message.text:
-		await message.reply(f"🤬 Ссылки запрещены 🤬 \n@{message.from_user.username}")
+		await message.reply(f"🌏 Ссылки запрещены 🌏\n@{message.from_user.username}")
 		await message.delete()
 	elif ".com" in message.text:
-		await message.reply(f"🤬 Ссылки запрещены 🤬 \n@{message.from_user.username}")
+		await message.reply(f"🌏 Ссылки запрещены 🌏\n@{message.from_user.username}")
 		await message.delete()
 	elif {i.lower().translate(str.maketrans('', '', string.punctuation)) for i in message.text.split(' ')}\
 		.intersection(set(json.load(open('cenz.json')))) != set():
