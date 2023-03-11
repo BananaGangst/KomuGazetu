@@ -35,7 +35,7 @@ async def echo_send(message : types.Message):
 		.intersection(set(json.load(open('cenz.json')))) != set():
 		await message.reply(f"🤬 Маты запрещены 🤬 \n@{message.from_user.username}")
 		await message.delete()
-  elif {i.lower().translate(str.maketrans('', '', string.punctuation)) for i in message.text.split(' ')}\
+	elif {i.lower().translate(str.maketrans('', '', string.punctuation)) for i in message.text.split(' ')}\
 		.intersection(set(json.load(open('cenz1.json')))) != set():
 		await message.reply(f"🤬 Ссылки запрещены 🤬 \n@{message.from_user.username}")
 		await message.delete()
