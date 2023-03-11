@@ -28,12 +28,12 @@ async def get_id(message: types.Message):
 @dp.message_handler()
 async def echo_send(message : types.Message):
 	if {i.lower().translate(str.maketrans('', '', string.punctuation)) for i in message.text.split(' ')}\
-		.intersection(set(json.load(open('cenz.json')))) != set():
-		await message.reply(f"🤬 Маты запрещены 🤬 \n@{message.from_user.username}")
-		await message.delete()
-	elif {i.lower().translate(str.maketrans('', '', string.punctuation)) for i in message.text.split(' ')}\
 		.intersection(set(json.load(open('cenz1.json')))) != set():
 		await message.reply(f"🤬 Ссылки запрещены 🤬 \n@{message.from_user.username}")
+		await message.delete()
+	elif {i.lower().translate(str.maketrans('', '', string.punctuation)) for i in message.text.split(' ')}\
+		.intersection(set(json.load(open('cenz.json')))) != set():
+		await message.reply(f"🤬 Маты запрещены 🤬 \n@{message.from_user.username}")
 		await message.delete()
 
 
